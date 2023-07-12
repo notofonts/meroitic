@@ -1,3 +1,6 @@
+languagesystem DFLT dflt;
+languagesystem merc dflt;
+
 table GDEF {
     GlyphClassDef [], [], [], [];
 } GDEF;
@@ -101,6 +104,12 @@ feature dist {
     lookup PairPositioning2;
     lookup PairPositioning3;
 } dist;
+
+feature kern {
+    lookup PairPositioning1;
+    lookup PairPositioning2;
+    lookup PairPositioning3;
+} kern;
 
     @GDEF_Base = [u109A0 u109A1 u109A2 u109A3 u109A4 u109A5 u109A6 u109A7 u109A8 u109A9 u109AA u109AB u109AC u109AD u109AE u109AF u109B0 u109B1 u109B2 u109B3 u109B4 u109B5 u109B6 u109B7 u109BC u109BD u109BE u109BF u109C0 u109C1 u109C2 u109C3 u109C4 u109C5 u109C6 u109C7 u109C8 u109C9 u109CA u109CB u109CC u109CD u109CE u109CF u109D2 u109D3 u109D4 u109D5 u109D6 u109D7 u109D8 u109D9 u109DA u109DB u109DC u109DD u109DE u109DF u109E0 u109E1 u109E2 u109E3 u109E4 u109E5 u109E6 u109E7 u109E8 u109E9 u109EA u109EB u109EC u109ED u109EE u109EF u109F0 u109F1 u109F2 u109F3 u109F4 u109F5 u109F6 u109F7 u109F8 u109F9 u109FA u109FB u109FC u109FD u109FE u109FF u109A2.alt1 u109A2.alt2];
     @GDEF_Ligature = [];
