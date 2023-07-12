@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+<head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>GFR - Glyphs</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style type="text/css">
+    
+
+        html{
+	  font-family: sans-serif;
+	}
+    @font-face {
+        font-family: "Adobe NotDef";
+        src: url(https://cdn.jsdelivr.net/gh/adobe-fonts/adobe-notdef/AND-Regular.ttf);
+    }
+	.box-title{
+	  width: 100%;
+	  font-size: 8pt;
+	  font-weight: 700;
+	  border-top: 1px solid black;
+	  padding-top: 5px;
+	  margin-bottom: 10pt;
+	  display: block;
+	}
+	.box{
+	  margin-bottom: 20pt;
+	  width: 100%;
+	  float: left;
+	}
+	.box-text{
+	}
+	
+	#nav{
+	  position: fixed;
+	  right: 20px;
+	  z-index: 100;
+	}
+	#font-toggle{
+	}
+	.nav-item{
+		display: block;
+		cursor: pointer;
+		-webkit-user-select: none; /* Safari */        
+		-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* IE10+/Edge */
+		user-select: none; /* Standard */
+		text-align: center;
+		color: white;
+		background-color: black;
+		display: block;
+		font-size: 9pt;
+		padding: 5px;
+		margin: 2px;
+	}
+	.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black;
+	}
+
+	.tooltip .tooltiptext {
+	font-family: sans-serif;
+	visibility: hidden;
+	width: 500px;
+	background-color: black;
+	color: #fff;
+	text-align: left;
+	font-size: 12pt;
+	line-height: 15pt;
+	border-radius: 6px;
+	padding: 5px 0;
+
+	/* Position the tooltip */
+	position: absolute;
+	z-index: 1;
+	}
+
+	.tooltip:hover .tooltiptext {
+	padding: 10px;
+	visibility: visible;
+	}
+	.tooltipleft {
+		float:left;
+		width: 249px;
+	}
+	.tooltipright {
+		float:right;
+		width:250px;
+	}
+
+			/* Stuff needed for the table differ */
+            body {
+                font-family: Helvetica;
+            }
+            .node {
+                font-family: courier;
+                cursor: pointer;
+                position: relative;
+                left: 30px;
+                padding: 5px;
+                display: block;
+                border: 1px dashed grey;
+            }
+            .header {
+            font-weight: bold;
+            }
+            .attrib-old{
+                color: red;
+                cursor: text;
+            }
+            .attrib-new{
+                color: green;
+                cursor: text;
+            }
+            .leaf {
+            font-weight: bold;
+            }
+            .old .cell .new {
+            	display:  none;
+            }
+            .new .cell .old {
+            	display:  none;
+            }
+            .both .cell .old {
+            	opacity: 0.75;
+            	color:  red;
+            }
+            .both .cell .new {
+            	opacity: 0.75;
+            	position: absolute;
+            	top: 0;
+            	color:  green;
+            }
+			.spacer {
+				display:block;
+				float:left;
+				width:100%;
+			}
+
+	  
+	    @font-face{
+    src: url(old-NotoSansMeroitic-Regular.ttf);
+    font-family: "old font";
+    font-weight: 400;
+    
+    font-style: normal;
+}
+	  
+
+	  
+	    @font-face{
+    src: url(new-NotoSansMeroitic-Regular.ttf);
+    font-family: "new font";
+    font-weight: 400;
+    
+    font-style: normal;
+}
+	  
+
+	  
+
+	  
+	    .old-wght-400{
+    font-family: "old font", "Adobe NotDef";
+    font-weight: 400;
+    
+    font-style: normal;
+    font-variation-settings: "wght" 400;
+}
+	  
+
+	  
+	    .new-wght-400{
+    font-family: "new font", "Adobe NotDef";
+    font-weight: 400;
+    
+    font-style: normal;
+    font-variation-settings: "wght" 400;
+}
+	  
+
+	  
+	
+.cell{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  width: 50pt;
+  line-height: 48.0px;
+}
+.cell-word{
+  z-index: -100;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 5pt;
+  margin: 5pt;
+  line-height: 48.0px;
+}
+.cat-strings .cell {
+  clear: both;
+  position: static;
+  float: none;
+  text-align: left;
+}
+.box-title {
+  clear: both;
+}
+
+    </style>
+</head>
+<body>
+    <div id="nav">
+		
+			<div class="nav-item" id="font-toggle">old</div>
+		
+		
+	</div>
+    <div id="content">
+	<h2>
+<b>Diffenator</b>
+</h2>
+	
+  
+    <div class="box">
+    <div class="box-title">Tables</div>
+     <script>var fontdiff = {"GSUB": {"table": {"ScriptList": {"ScriptCount": [1, 2], "ScriptRecord": {"1": {"ScriptTag": [null, "merc"], "Script": {"DefaultLangSys": {"ReqFeatureIndex": [null, 65535], "FeatureCount": [null, 1], "FeatureIndex": {"0": [null, 0]}}, "LangSysCount": [null, 0]}}}}}}, "GPOS": {"table": {"ScriptList": {"ScriptCount": [1, 2], "ScriptRecord": {"0": {"Script": {"DefaultLangSys": {"FeatureIndex": {"1": [null, 1]}, "FeatureCount": [1, 2]}}}, "1": {"ScriptTag": [null, "merc"], "Script": {"DefaultLangSys": {"ReqFeatureIndex": [null, 65535], "FeatureCount": [null, 2], "FeatureIndex": {"0": [null, 0], "1": [null, 1]}}, "LangSysCount": [null, 0]}}}}, "FeatureList": {"FeatureRecord": {"1": {"FeatureTag": [null, "kern"], "Feature": {"LookupCount": [null, 3], "LookupListIndex": {"0": [null, 0], "1": [null, 1], "2": [null, 2]}}}}, "FeatureCount": [1, 2]}}}, "head": {"checkSumAdjustment": [892994055, 1941603989], "modified": [3746873827, 3772006412]}, "glyf": {"glyphs": {"u109CA": {"xMin": [30, null], "yMax": [337, null], "xMax": [1301, null], "endPtsOfContours": {"0": [34, null]}, "numberOfContours": [1, null], "yMin": [-14, null]}, "u109FB": {"xMin": [150, null], "yMax": [615, null], "xMax": [561, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null], "3": [47, null], "4": [59, null], "5": [71, null]}, "numberOfContours": [6, null], "yMin": [-2, null]}, "u109A1": {"xMin": [10, null], "yMax": [630, null], "xMax": [425, null], "endPtsOfContours": {"0": [54, null]}, "numberOfContours": [1, null], "yMin": [-20, null]}, "u10989": {"xMin": [50, null], "yMax": [815, null], "xMax": [865, null], "endPtsOfContours": {"0": [98, null], "1": [159, null], "2": [189, null], "3": [199, null], "4": [210, null]}, "numberOfContours": [5, null], "yMin": [-84, null]}, "u109CB": {"xMin": [31, null], "yMax": [592, null], "xMax": [843, null], "endPtsOfContours": {"0": [38, null]}, "numberOfContours": [1, null], "yMin": [-82, null]}, "u109F0": {"xMin": [30, null], "yMax": [556, null], "xMax": [1397, null], "endPtsOfContours": {"0": [94, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u1099A": {"xMin": [100, null], "yMax": [637, null], "xMax": [820, null], "endPtsOfContours": {"0": [13, null], "1": [59, null]}, "numberOfContours": [2, null], "yMin": [-12, null]}, "u109E5": {"xMin": [30, null], "yMax": [560, null], "xMax": [1259, null], "endPtsOfContours": {"0": [61, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u109E4": {"xMin": [30, null], "yMax": [560, null], "xMax": [1259, null], "endPtsOfContours": {"0": [52, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u109EB": {"xMin": [30, null], "yMax": [560, null], "xMax": [1259, null], "endPtsOfContours": {"0": [43, null], "1": [70, null], "2": [91, null]}, "numberOfContours": [3, null], "yMin": [-408, null]}, "u109EE": {"xMin": [30, null], "yMax": [556, null], "xMax": [1397, null], "endPtsOfContours": {"0": [73, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u109C8": {"xMin": [90, null], "yMax": [684, null], "xMax": [345, null], "endPtsOfContours": {"0": [45, null]}, "numberOfContours": [1, null], "yMin": [-10, null]}, "u109BD": {"xMin": [50, null], "yMax": [923, null], "xMax": [433, null], "endPtsOfContours": {"0": [11, null], "1": [39, null]}, "numberOfContours": [2, null], "yMin": [710, null]}, "u10988": {"xMin": [50, null], "yMax": [490, null], "xMax": [926, null], "endPtsOfContours": {"0": [19, null], "1": [25, null], "2": [31, null], "3": [35, null], "4": [41, null], "5": [47, null], "6": [51, null]}, "numberOfContours": [7, null], "yMin": [0, null]}, "u10986": {"xMin": [50, null], "yMax": [751, null], "xMax": [1097, null], "endPtsOfContours": {"0": [180, null], "1": [243, null]}, "numberOfContours": [2, null], "yMin": [0, null]}, "u109B6": {"xMin": [20, null], "yMax": [425, null], "xMax": [795, null], "endPtsOfContours": {"0": [46, null], "1": [58, null]}, "numberOfContours": [2, null], "yMin": [-140, null]}, "u109CD": {"xMin": [30, null], "yMax": [497, null], "xMax": [1252, null], "endPtsOfContours": {"0": [73, null]}, "numberOfContours": [1, null], "yMin": [-115, null]}, "u10996": {"xMin": [50, null], "yMax": [840, null], "xMax": [932, null], "endPtsOfContours": {"0": [94, null], "1": [108, null], "2": [153, null]}, "numberOfContours": [3, null], "yMin": [0, null]}, "u1099E": {"xMin": [40, null], "yMax": [720, null], "xMax": [488, null], "endPtsOfContours": {"0": [36, null], "1": [48, null]}, "numberOfContours": [2, null], "yMin": [-12, null]}, "u10981": {"xMin": [100, null], "yMax": [830, null], "xMax": [423, null], "endPtsOfContours": {"0": [34, null], "1": [60, null]}, "numberOfContours": [2, null], "yMin": [-12, null]}, "u109F7": {"xMin": [150, null], "yMax": [615, null], "xMax": [561, null], "endPtsOfContours": {"0": [11, null], "1": [23, null]}, "numberOfContours": [2, null], "yMin": [505, null]}, "u109F5": {"xMin": [30, null], "yMax": [556, null], "xMax": [1397, null], "endPtsOfContours": {"0": [56, null], "1": [91, null]}, "numberOfContours": [2, null], "yMin": [-412, null]}, "u109AA": {"xMin": [-20, null], "yMax": [613, null], "xMax": [587, null], "endPtsOfContours": {"0": [50, null], "1": [56, null]}, "numberOfContours": [2, null], "yMin": [-112, null]}, "u109D2": {"xMin": [30, null], "yMax": [401, null], "xMax": [1522, null], "endPtsOfContours": {"0": [43, null]}, "numberOfContours": [1, null], "yMin": [-58, null]}, "ellipsis": {"xMin": [73, null], "yMax": [112, null], "xMax": [827, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null]}, "numberOfContours": [3, null], "yMin": [-10, null]}, "u109F8": {"xMin": [150, null], "yMax": [615, null], "xMax": [720, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null]}, "numberOfContours": [3, null], "yMin": [251, null]}, "u109AC": {"xMin": [40, null], "yMax": [586, null], "xMax": [301, null], "endPtsOfContours": {"0": [43, null]}, "numberOfContours": [1, null], "yMin": [-17, null]}, "u109EF": {"xMin": [30, null], "yMax": [556, null], "xMax": [1397, null], "endPtsOfContours": {"0": [83, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u109F6": {"xMin": [150, null], "yMax": [615, null], "xMax": [262, null], "endPtsOfContours": {"0": [11, null]}, "numberOfContours": [1, null], "yMin": [505, null]}, "u109DB": {"xMin": [30, null], "yMax": [550, null], "xMax": [1472, null], "endPtsOfContours": {"0": [89, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u1099D": {"xMin": [17, null], "yMax": [657, null], "xMax": [909, null], "endPtsOfContours": {"0": [104, null], "1": [119, null], "2": [142, null]}, "numberOfContours": [3, null], "yMin": [-20, null]}, "u109DC": {"xMin": [30, null], "yMax": [550, null], "xMax": [1472, null], "endPtsOfContours": {"0": [102, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u109D6": {"xMin": [30, null], "yMax": [429, null], "xMax": [1522, null], "endPtsOfContours": {"0": [41, null], "1": [85, null]}, "numberOfContours": [2, null], "yMin": [-58, null]}, "u109AE": {"xMin": [-60, null], "yMax": [680, null], "xMax": [343, null], "endPtsOfContours": {"0": [56, null]}, "numberOfContours": [1, null], "yMin": [-140, null]}, "u109F2": {"xMin": [30, null], "yMax": [556, null], "xMax": [1397, null], "endPtsOfContours": {"0": [58, null], "1": [75, null], "2": [92, null], "3": [126, null]}, "numberOfContours": [4, null], "yMin": [-399, null]}, "u109D4": {"xMin": [30, null], "yMax": [401, null], "xMax": [1522, null], "endPtsOfContours": {"0": [88, null]}, "numberOfContours": [1, null], "yMin": [-58, null]}, "u109F9": {"xMin": [150, null], "yMax": [615, null], "xMax": [561, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null], "3": [47, null]}, "numberOfContours": [4, null], "yMin": [251, null]}, "uni205D": {"xMin": [79, null], "yMax": [630, null], "xMax": [248, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null]}, "numberOfContours": [3, null], "yMin": [78, null]}, "u10980": {"xMin": [50, null], "yMax": [840, null], "xMax": [640, null], "endPtsOfContours": {"0": [94, null], "1": [106, null], "2": [119, null], "3": [128, null]}, "numberOfContours": [4, null], "yMin": [-14, null]}, "u109C7": {"xMin": [30, null], "yMax": [554, null], "xMax": [584, null], "endPtsOfContours": {"0": [26, null], "1": [47, null]}, "numberOfContours": [2, null], "yMin": [-17, null]}, "u109A8": {"xMin": [20, null], "yMax": [659, null], "xMax": [324, null], "endPtsOfContours": {"0": [39, null]}, "numberOfContours": [1, null], "yMin": [-71, null]}, "u109CC": {"xMin": [30, null], "yMax": [287, null], "xMax": [1465, null], "endPtsOfContours": {"0": [42, null]}, "numberOfContours": [1, null], "yMin": [0, null]}, "u109B0": {"xMin": [40, null], "yMax": [649, null], "xMax": [420, null], "endPtsOfContours": {"0": [32, null], "1": [52, null]}, "numberOfContours": [2, null], "yMin": [0, null]}, ".notdef": {"xMin": [94, null], "yMax": [714, null], "xMax": [505, null], "endPtsOfContours": {"0": [3, null], "1": [7, null]}, "numberOfContours": [2, null], "yMin": [0, null]}, "u109C4": {"xMin": [30, null], "yMax": [684, null], "xMax": [475, null], "endPtsOfContours": {"0": [43, null]}, "numberOfContours": [1, null], "yMin": [-12, null]}, "u109E2": {"xMin": [30, null], "yMax": [550, null], "xMax": [1719, null], "endPtsOfContours": {"0": [79, null], "1": [106, null], "2": [127, null]}, "numberOfContours": [3, null], "yMin": [-228, null]}, "u109A2.alt1": {"xMin": [20, null], "yMax": [720, null], "xMax": [676, null], "endPtsOfContours": {"0": [56, null]}, "numberOfContours": [1, null], "yMin": [-70, null]}, "u10985": {"xMin": [50, null], "yMax": [830, null], "xMax": [518, null], "endPtsOfContours": {"0": [58, null], "1": [70, null]}, "numberOfContours": [2, null], "yMin": [-12, null]}, "u109C3": {"xMin": [100, null], "yMax": [680, null], "xMax": [680, null], "endPtsOfContours": {"0": [13, null], "1": [27, null], "2": [41, null], "3": [55, null]}, "numberOfContours": [4, null], "yMin": [-10, null]}, "u10982": {"xMin": [50, null], "yMax": [840, null], "xMax": [640, null], "endPtsOfContours": {"0": [96, null], "1": [108, null], "2": [124, null]}, "numberOfContours": [3, null], "yMin": [0, null]}, "u10984": {"xMin": [49, null], "yMax": [830, null], "xMax": [610, null], "endPtsOfContours": {"0": [21, null], "1": [43, null], "2": [57, null], "3": [71, null]}, "numberOfContours": [4, null], "yMin": [-12, null]}, "u109AF": {"xMin": [-80, null], "yMax": [620, null], "xMax": [334, null], "endPtsOfContours": {"0": [59, null]}, "numberOfContours": [1, null], "yMin": [-95, null]}, "colon": {"xMin": [83, null], "yMax": [553, null], "xMax": [238, null], "endPtsOfContours": {"0": [11, null], "1": [23, null]}, "numberOfContours": [2, null], "yMin": [108, null]}, "u109E9": {"xMin": [30, null], "yMax": [560, null], "xMax": [1259, null], "endPtsOfContours": {"0": [43, null], "1": [60, null], "2": [77, null], "3": [111, null]}, "numberOfContours": [4, null], "yMin": [-399, null]}, "u1098A": {"xMin": [50, null], "yMax": [473, null], "xMax": [885, null], "endPtsOfContours": {"0": [52, null], "1": [105, null]}, "numberOfContours": [2, null], "yMin": [-23, null]}, "u10992": {"xMin": [50, null], "yMax": [720, null], "xMax": [696, null], "endPtsOfContours": {"0": [55, null], "1": [107, null]}, "numberOfContours": [2, null], "yMin": [0, null]}, "u10999": {"xMin": [50, null], "yMax": [439, null], "xMax": [1456, null], "endPtsOfContours": {"0": [23, null], "1": [39, null]}, "numberOfContours": [2, null], "yMin": [154, null]}, "u109EC": {"xMin": [30, null], "yMax": [560, null], "xMax": [1259, null], "endPtsOfContours": {"0": [43, null], "1": [78, null]}, "numberOfContours": [2, null], "yMin": [-412, null]}, "u109A9": {"xMin": [50, null], "yMax": [630, null], "xMax": [634, null], "endPtsOfContours": {"0": [78, null]}, "numberOfContours": [1, null], "yMin": [-154, null]}, "u109A6": {"xMin": [20, null], "yMax": [580, null], "xMax": [469, null], "endPtsOfContours": {"0": [50, null]}, "numberOfContours": [1, null], "yMin": [0, null]}, "u109F4": {"xMin": [30, null], "yMax": [556, null], "xMax": [1397, null], "endPtsOfContours": {"0": [57, null], "1": [84, null], "2": [105, null]}, "numberOfContours": [3, null], "yMin": [-408, null]}, "u1098C": {"xMin": [49, null], "yMax": [830, null], "xMax": [832, null], "endPtsOfContours": {"0": [105, null], "1": [211, null]}, "numberOfContours": [2, null], "yMin": [-12, null]}, "u109DA": {"xMin": [30, null], "yMax": [476, null], "xMax": [1522, null], "endPtsOfContours": {"0": [34, null], "1": [78, null]}, "numberOfContours": [2, null], "yMin": [-58, null]}, "u109D5": {"xMin": [30, null], "yMax": [401, null], "xMax": [1522, null], "endPtsOfContours": {"0": [114, null]}, "numberOfContours": [1, null], "yMin": [-58, null]}, "u109A4": {"xMin": [60, null], "yMax": [618, null], "xMax": [648, null], "endPtsOfContours": {"0": [36, null], "1": [73, null], "2": [110, null]}, "numberOfContours": [3, null], "yMin": [0, null]}, "u109CE": {"xMin": [30, null], "yMax": [280, null], "xMax": [1446, null], "endPtsOfContours": {"0": [41, null], "1": [72, null]}, "numberOfContours": [2, null], "yMin": [-97, null]}, "u1098B": {"xMin": [50, null], "yMax": [321, null], "xMax": [1135, null], "endPtsOfContours": {"0": [66, null]}, "numberOfContours": [1, null], "yMin": [115, null]}, "u109FA": {"xMin": [150, null], "yMax": [615, null], "xMax": [720, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null], "3": [47, null], "4": [59, null]}, "numberOfContours": [5, null], "yMin": [-2, null]}, "u109F3": {"xMin": [30, null], "yMax": [556, null], "xMax": [1397, null], "endPtsOfContours": {"0": [53, null], "1": [110, null]}, "numberOfContours": [2, null], "yMin": [-399, null]}, "u109AD": {"xMin": [30, null], "yMax": [466, null], "xMax": [660, null], "endPtsOfContours": {"0": [47, null]}, "numberOfContours": [1, null], "yMin": [0, null]}, "u109E3": {"xMin": [30, null], "yMax": [550, null], "xMax": [1669, null], "endPtsOfContours": {"0": [79, null], "1": [114, null]}, "numberOfContours": [2, null], "yMin": [-230, null]}, "u109C9": {"xMin": [30, null], "yMax": [330, null], "xMax": [1260, null], "endPtsOfContours": {"0": [33, null]}, "numberOfContours": [1, null], "yMin": [-17, null]}, "u10987": {"xMin": [50, null], "yMax": [830, null], "xMax": [599, null], "endPtsOfContours": {"0": [29, null], "1": [40, null]}, "numberOfContours": [2, null], "yMin": [0, null]}, "u109B3": {"xMin": [60, null], "yMax": [659, null], "xMax": [464, null], "endPtsOfContours": {"0": [40, null], "1": [62, null]}, "numberOfContours": [2, null], "yMin": [-71, null]}, "u109D9": {"xMin": [30, null], "yMax": [501, null], "xMax": [1522, null], "endPtsOfContours": {"0": [26, null], "1": [47, null], "2": [91, null]}, "numberOfContours": [3, null], "yMin": [-58, null]}, "u109ED": {"xMin": [30, null], "yMax": [556, null], "xMax": [1397, null], "endPtsOfContours": {"0": [65, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u1099C": {"xMin": [50, null], "yMax": [510, null], "xMax": [926, null], "endPtsOfContours": {"0": [27, null], "1": [53, null]}, "numberOfContours": [2, null], "yMin": [-8, null]}, "u109DF": {"xMin": [30, null], "yMax": [550, null], "xMax": [1472, null], "endPtsOfContours": {"0": [79, null], "1": [123, null]}, "numberOfContours": [2, null], "yMin": [-339, null]}, "u109A7": {"xMin": [20, null], "yMax": [660, null], "xMax": [452, null], "endPtsOfContours": {"0": [57, null]}, "numberOfContours": [1, null], "yMin": [-93, null]}, "u1098D": {"xMin": [50, null], "yMax": [753, null], "xMax": [657, null], "endPtsOfContours": {"0": [55, null], "1": [111, null], "2": [152, null], "3": [194, null]}, "numberOfContours": [4, null], "yMin": [-22, null]}, "u109D7": {"xMin": [30, null], "yMax": [507, null], "xMax": [1522, null], "endPtsOfContours": {"0": [16, null], "1": [33, null], "2": [77, null], "3": [111, null]}, "numberOfContours": [4, null], "yMin": [-58, null]}, "u109B1": {"xMin": [30, null], "yMax": [676, null], "xMax": [858, null], "endPtsOfContours": {"0": [43, null], "1": [65, null], "2": [87, null]}, "numberOfContours": [3, null], "yMin": [-5, null]}, "u109E7": {"xMin": [30, null], "yMax": [560, null], "xMax": [1259, null], "endPtsOfContours": {"0": [79, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u109B5": {"xMin": [60, null], "yMax": [618, null], "xMax": [766, null], "endPtsOfContours": {"0": [63, null], "1": [85, null]}, "numberOfContours": [2, null], "yMin": [-90, null]}, "u10995": {"xMin": [50, null], "yMax": [610, null], "xMax": [720, null], "endPtsOfContours": {"0": [67, null], "1": [71, null]}, "numberOfContours": [2, null], "yMin": [-12, null]}, "u109E6": {"xMin": [30, null], "yMax": [560, null], "xMax": [1259, null], "endPtsOfContours": {"0": [70, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u109DD": {"xMin": [30, null], "yMax": [550, null], "xMax": [1472, null], "endPtsOfContours": {"0": [112, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u109C0": {"xMin": [100, null], "yMax": [680, null], "xMax": [170, null], "endPtsOfContours": {"0": [13, null]}, "numberOfContours": [1, null], "yMin": [-10, null]}, "u10993": {"xMin": [50, null], "yMax": [815, null], "xMax": [1076, null], "endPtsOfContours": {"0": [81, null], "1": [84, null], "2": [87, null], "3": [90, null], "4": [93, null], "5": [96, null], "6": [112, null]}, "numberOfContours": [7, null], "yMin": [0, null]}, "u1099B": {"xMin": [100, null], "yMax": [495, null], "xMax": [695, null], "endPtsOfContours": {"0": [45, null]}, "numberOfContours": [1, null], "yMin": [0, null]}, "u109C6": {"xMin": [30, null], "yMax": [534, null], "xMax": [1230, null], "endPtsOfContours": {"0": [60, null]}, "numberOfContours": [1, null], "yMin": [1, null]}, "u109FE": {"xMin": [150, null], "yMax": [615, null], "xMax": [860, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null], "3": [47, null], "4": [59, null], "5": [71, null], "6": [83, null], "7": [95, null], "8": [107, null]}, "numberOfContours": [9, null], "yMin": [-2, null]}, "u109B4": {"xMin": [17, null], "yMax": [628, null], "xMax": [399, null], "endPtsOfContours": {"0": [49, null], "1": [61, null]}, "numberOfContours": [2, null], "yMin": [-163, null]}, "u109AB": {"xMin": [50, null], "yMax": [516, null], "xMax": [666, null], "endPtsOfContours": {"0": [64, null]}, "numberOfContours": [1, null], "yMin": [189, null]}, "u109A2.alt2": {"xMin": [20, null], "yMax": [720, null], "xMax": [1026, null], "endPtsOfContours": {"0": [58, null]}, "numberOfContours": [1, null], "yMin": [-70, null]}, "u109FC": {"xMin": [150, null], "yMax": [615, null], "xMax": [860, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null], "3": [47, null], "4": [59, null], "5": [71, null], "6": [83, null]}, "numberOfContours": [7, null], "yMin": [-2, null]}, "u10997": {"xMin": [50, null], "yMax": [748, null], "xMax": [464, null], "endPtsOfContours": {"0": [20, null], "1": [31, null]}, "numberOfContours": [2, null], "yMin": [0, null]}, "u109FD": {"xMin": [150, null], "yMax": [615, null], "xMax": [860, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null], "3": [47, null], "4": [59, null], "5": [71, null], "6": [83, null], "7": [95, null]}, "numberOfContours": [8, null], "yMin": [-2, null]}, "u109FF": {"xMin": [150, null], "yMax": [867, null], "xMax": [860, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null], "3": [47, null], "4": [59, null], "5": [71, null], "6": [83, null], "7": [95, null], "8": [107, null], "9": [119, null]}, "numberOfContours": [10, null], "yMin": [-2, null]}, "u109E0": {"xMin": [30, null], "yMax": [550, null], "xMax": [1472, null], "endPtsOfContours": {"0": [74, null], "1": [91, null], "2": [108, null], "3": [145, null]}, "numberOfContours": [4, null], "yMin": [-401, null]}, "u10983": {"xMin": [50, null], "yMax": [849, null], "xMax": [803, null], "endPtsOfContours": {"0": [92, null], "1": [146, null], "2": [158, null]}, "numberOfContours": [3, null], "yMin": [-14, null]}, "u109B2": {"xMin": [0, null], "yMax": [620, null], "xMax": [481, null], "endPtsOfContours": {"0": [75, null]}, "numberOfContours": [1, null], "yMin": [-193, null]}, "u109A3": {"xMin": [90, null], "yMax": [618, null], "xMax": [278, null], "endPtsOfContours": {"0": [21, null]}, "numberOfContours": [1, null], "yMin": [0, null]}, "u10994": {"xMin": [50, null], "yMax": [364, null], "xMax": [1218, null], "endPtsOfContours": {"0": [49, null]}, "numberOfContours": [1, null], "yMin": [-12, null]}, "u109BF": {"xMin": [15, null], "yMax": [779, null], "xMax": [814, null], "endPtsOfContours": {"0": [22, null], "1": [36, null], "2": [97, null]}, "numberOfContours": [3, null], "yMin": [-10, null]}, "u10991": {"xMin": [50, null], "yMax": [420, null], "xMax": [1178, null], "endPtsOfContours": {"0": [17, null], "1": [34, null], "2": [48, null]}, "numberOfContours": [3, null], "yMin": [-12, null]}, "u109CF": {"xMin": [30, null], "yMax": [375, null], "xMax": [1347, null], "endPtsOfContours": {"0": [60, null]}, "numberOfContours": [1, null], "yMin": [-259, null]}, "u1099F": {"xMin": [50, null], "yMax": [792, null], "xMax": [789, null], "endPtsOfContours": {"0": [65, null], "1": [82, null], "2": [89, null], "3": [97, null], "4": [109, null], "5": [113, null]}, "numberOfContours": [6, null], "yMin": [0, null]}, "u109D8": {"xMin": [30, null], "yMax": [506, null], "xMax": [1522, null], "endPtsOfContours": {"0": [53, null], "1": [97, null]}, "numberOfContours": [2, null], "yMin": [-58, null]}, "u109DE": {"xMin": [30, null], "yMax": [550, null], "xMax": [1472, null], "endPtsOfContours": {"0": [123, null]}, "numberOfContours": [1, null], "yMin": [-230, null]}, "u109A2": {"xMin": [20, null], "yMax": [720, null], "xMax": [546, null], "endPtsOfContours": {"0": [56, null]}, "numberOfContours": [1, null], "yMin": [-70, null]}, "u1098E": {"xMin": [50, null], "yMax": [285, null], "xMax": [897, null], "endPtsOfContours": {"0": [15, null], "1": [31, null], "2": [43, null]}, "numberOfContours": [3, null], "yMin": [0, null]}, "u1098F": {"xMin": [50, null], "yMax": [385, null], "xMax": [860, null], "endPtsOfContours": {"0": [15, null], "1": [31, null], "2": [45, null]}, "numberOfContours": [3, null], "yMin": [0, null]}, "u109EA": {"xMin": [30, null], "yMax": [560, null], "xMax": [1259, null], "endPtsOfContours": {"0": [43, null], "1": [99, null]}, "numberOfContours": [2, null], "yMin": [-399, null]}, "u109F1": {"xMin": [30, null], "yMax": [556, null], "xMax": [1397, null], "endPtsOfContours": {"0": [57, null], "1": [101, null]}, "numberOfContours": [2, null], "yMin": [-339, null]}, "u109BE": {"xMin": [50, null], "yMax": [695, null], "xMax": [412, null], "endPtsOfContours": {"0": [53, null]}, "numberOfContours": [1, null], "yMin": [-8, null]}, "u109A0": {"xMin": [10, null], "yMax": [630, null], "xMax": [891, null], "endPtsOfContours": {"0": [54, null], "1": [113, null]}, "numberOfContours": [2, null], "yMin": [-98, null]}, "u109C5": {"xMin": [30, null], "yMax": [585, null], "xMax": [728, null], "endPtsOfContours": {"0": [18, null], "1": [37, null], "2": [68, null]}, "numberOfContours": [3, null], "yMin": [-44, null]}, "u109D3": {"xMin": [30, null], "yMax": [401, null], "xMax": [1522, null], "endPtsOfContours": {"0": [66, null]}, "numberOfContours": [1, null], "yMin": [-58, null]}, "u109E1": {"xMin": [30, null], "yMax": [550, null], "xMax": [1472, null], "endPtsOfContours": {"0": [79, null], "1": [132, null]}, "numberOfContours": [2, null], "yMin": [-399, null]}, "u109BC": {"xMin": [150, null], "yMax": [615, null], "xMax": [1459, null], "endPtsOfContours": {"0": [11, null], "1": [23, null], "2": [35, null], "3": [47, null], "4": [59, null], "5": [71, null], "6": [83, null], "7": [95, null], "8": [107, null], "9": [119, null], "10": [131, null]}, "numberOfContours": [11, null], "yMin": [-2, null]}, "u109A5": {"xMin": [20, null], "yMax": [700, null], "xMax": [427, null], "endPtsOfContours": {"0": [38, null], "1": [55, null]}, "numberOfContours": [2, null], "yMin": [-10, null]}, "u109C1": {"xMin": [100, null], "yMax": [680, null], "xMax": [340, null], "endPtsOfContours": {"0": [13, null], "1": [27, null]}, "numberOfContours": [2, null], "yMin": [-10, null]}, "u10981.rev": {"xMin": [40, null], "yMax": [830, null], "xMax": [363, null], "endPtsOfContours": {"0": [33, null], "1": [59, null]}, "numberOfContours": [2, null], "yMin": [-12, null]}, "u109B7": {"xMin": [0, null], "yMax": [613, null], "xMax": [561, null], "endPtsOfContours": {"0": [61, null], "1": [66, null]}, "numberOfContours": [2, null], "yMin": [54, null]}, "u109C2": {"xMin": [100, null], "yMax": [680, null], "xMax": [510, null], "endPtsOfContours": {"0": [13, null], "1": [27, null], "2": [41, null]}, "numberOfContours": [3, null], "yMin": [-10, null]}, "u10998": {"xMin": [50, null], "yMax": [565, null], "xMax": [1003, null], "endPtsOfContours": {"0": [51, null], "1": [63, null], "2": [74, null], "3": [86, null]}, "numberOfContours": [4, null], "yMin": [-35, null]}, "u10990": {"xMin": [50, null], "yMax": [689, null], "xMax": [1478, null], "endPtsOfContours": {"0": [200, null]}, "numberOfContours": [1, null], "yMin": [0, null]}, "u109E8": {"xMin": [30, null], "yMax": [560, null], "xMax": [1259, null], "endPtsOfContours": {"0": [43, null], "1": [86, null]}, "numberOfContours": [2, null], "yMin": [-339, null]}}}};</script><div id="difftable"></div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    <div class="box">
+      <div class="box-title">Misshapen user strings</div>
+      <div class="box-text old-wght-400" style="font-size: 32pt">
+        
+      </div>
+    </div>
+    
+
+    
+
+    </div>
+  
+
+    </div>
+</body>
+	<script>
+
+	POSITION = "old"
+	fontToggle = document.getElementById("font-toggle")
+	function switchFonts() {
+	boxTitles = document.getElementsByClassName("box-title")
+	items = document.getElementsByClassName("box-text");
+	  
+	if (POSITION === "old") {
+	  POSITION = "new"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("old", "new")
+	    fontToggle.textContent = "new"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("old", "new")
+	  }
+
+	  } else {
+	  POSITION = "old"
+	  for (item of boxTitles) {
+	    item.textContent = item.textContent.replace("new", "old")
+	    fontToggle.textContent = "old"
+	  }
+	  for (item of items) {
+		item.className = item.className.replace("new", "old")
+	  }
+	}
+	}
+	if (fontToggle !== null) {
+		fontToggle.addEventListener("click", switchFonts);
+	}
+
+    
+	function render(node, toplevel) {
+		var wrapper = $("<div> </div>");
+		if (!node) { return wrapper }
+		if (Array.isArray(node)) {
+			var before = $("<span/>");
+			before.addClass("attr-before");
+			before.html(" " + node[0] + " ");
+			var after = $("<span/>");
+			after.addClass("attr-after");
+			after.append(node[1]);
+			wrapper.append(before);
+			wrapper.append(after);
+			return wrapper
+		}
+		for (const [key, value] of Object.entries(node)) {
+			var display = $("<div/>");
+			display.addClass("node")
+			if (!toplevel && ! key.match(/^\d+$/)) {
+				display.hide()
+			}
+			display.append(key);
+			display.append(render(value, false).children());
+			wrapper.append(display)
+		}
+		return wrapper
+
+	}
+	$(function() {
+		$("#difftable").append(render(fontdiff, true).children())
+		$(".node").on("click", function(event){ $(this).children().toggle(); event.stopPropagation() })
+	});
+
+function wordBreaks() {
+  words = document.getElementsByClassName("cell-word")
+  res = []
+  prevTop = 0
+  for (i=0; i<words.length; i++) {
+      var word = words[i]
+      currentTop = word.getBoundingClientRect().top
+      if (currentTop > prevTop) {
+          res.push(i)
+      }
+      prevTop = currentTop
+  }
+  return res
+}
+
+async function insertBreaks() {
+  switchFonts()
+  await sleep(1)
+  breaksBefore = wordBreaks()
+  switchFonts()
+  await sleep(1)
+  breaksAfter = wordBreaks()
+
+
+  console.log(breaksBefore.length, breaksAfter.length)
+
+  if (breaksBefore.length >= breaksAfter.length) {
+    breaks = breaksBefore
+  } else {
+    breaks = breaksAfter
+  }
+
+  words = document.getElementsByClassName("cell-word")
+  breaks.forEach(function(i) {
+    if (i != 0) {
+      i = i
+    }
+    word = words[i]
+    spacer = document.createElement("div")
+    spacer.className = "spacer"
+    word.parentNode.insertBefore(spacer, word)
+  })
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+  
+insertBreaks()
+
+
+    </script>
+</html>
