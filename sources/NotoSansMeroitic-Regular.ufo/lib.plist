@@ -178,5 +178,9 @@
       <key>tricolon</key>
       <string>uni205D</string>
     </dict>
+    <key>public.skipExportGlyphs</key>
+    <array>
+      <string>ellipsis</string>
+    </array>
   </dict>
 </plist>
